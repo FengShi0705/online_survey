@@ -1,27 +1,26 @@
 #Intro{
-
+    position:relative;
     font-family: 'Roboto', sans-serif;
     font-size:16px;
     left: 10px;
+}
+
+#outerpanel{
+    font-family: 'Roboto', sans-serif;
+    position:relative;
+    margin:auto;
     top: 10px;
-}
-
-#result{
     overflow-x:scroll;
-    width: 480px;
-  height: 140px;
-     overflow-y: hidden;
-     border: 1px solid green;
-
+    width: 95%;
+    overflow-y: hidden;
+    border: 1px solid green;
 }
 
-div.alg{
-  width: 200px;
-  height: 92px;
-  margin:10px 10px 50px 10px;
-  display: inline-block;
+th.alg, td.alg{
+    word-wrap:break-word;
+    width:300px;
 }
-.inner {
-  height: 100%;
-  white-space:nowrap;
+th,td{
+    padding-bottom: 15px;
+    padding-left: 15px;
 }
