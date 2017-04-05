@@ -51,6 +51,38 @@ def index():
 def mobile():
     return make_response(open('m-index.html').read())
 
+#####--------------------------------- for survey------------------------------------------------
+
+#transfer searchtext to wid
+@app.route('/searchtexttowid/<info>')
+def searchtexttowid(info):
+    searchtext = json.loads(info)
+    searchtext = searchtext.encode('utf-8')
+    ipts = [word.strip() for word in searchtext.split(';')]
+    wid = myRtr.input_ids(ipts)[0]
+    response = json.dumps(wid)
+
+    return make_response(response)
+
+# survey explore
+@app.route('/survey_explore/<info>')
+def survey_explore(info):
+    info=json.loads(info)
+    #def my_Gen(self,N,user,parameters,generator,start=True):
+    #def get_Rel_one(self, ipt, tp, minhops, localnodes=None):
+    user = session['user']
+    parameters = {'ipt':info['wid'],'tp':info['tp'],'minhops':1,'localnodes':None}
+    generator = 'get_Rel_one'
+    explorenodes, explorepaths, position = myRtr.my_Gen( info['N'],user,parameters,generator )
+
+    label_paths=[ ' --> '.join(p['labels']) for p in explorepaths ]
+    response=json.dumps(label_paths)
+    return make_response(response)
+
+
+#####--------------------------------- end for survey------------------------------------------------
+
+
 # get text return nodes number
 @app.route('/texttowid/<info>')
 def texttowid(info):

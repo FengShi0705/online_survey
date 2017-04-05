@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title> User test for B_link </title>
     <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="static/spin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="static/mystyle.css">
     <link rel="stylesheet" type="text/css" href="static/w3.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Slabo+27px" rel="stylesheet">
@@ -14,10 +16,15 @@
         <input type="text" id="Explore">
     </div>
 
+
+    <div id="wrapper">
+        <div id="wrapperdiv">
+        </div>
+    </div>
     <div id="outerpanel" class="w3-border w3-border-blue">
 
-            <table style="table-layout:fixed; width:1860px;">
-
+        <table style="table-layout:fixed; width:1860px;">
+            <tbody>
             <tr>
                 <th>No.</th>
                 <th class="alg">A</th>
@@ -27,34 +34,10 @@
                 <th class="alg">E</th>
                 <th class="alg">F</th>
             </tr>
-              <tr>
-                <td>1</td>
-                <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-              </tr>
-              <tr>
-                <td>2</td>
-               <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-                  <td class="alg">Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</td>
-              </tr>
-            </table>
+            </tbody>
+        </table>
+
+        <div id="spin" style="position:fixed; left:50%; top:50%;"></div>
 
     </div>
 
@@ -64,5 +47,6 @@
 
 
     <script type="text/javascript" src="static/app.js"></script>
+    <script type="text/javascript" src="static/setting.js"></script>
 </body>
 </html>
