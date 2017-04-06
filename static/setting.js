@@ -32,5 +32,16 @@ $(function(){
     });
 });
 
+$(function(){
+    $("#wrapper2").scroll(function(){
+        $("#outerpanel2")
+            .scrollLeft($("#wrapper2").scrollLeft());
+    });
+    $("#outerpanel2").scroll(function(){
+        $("#wrapper2")
+            .scrollLeft($("#outerpanel2").scrollLeft());
+    });
+});
+
 var Loading_Spinner = new Spinner(Spinner_Opts).spin(d3.select('#spin').node());
 Unfreeze();

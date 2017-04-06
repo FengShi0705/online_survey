@@ -15,6 +15,7 @@ app.secret_key='\x8b\x19\xa1\xb0D\x87?\xc1M\x04\xff\xc8\xbdE\xb1\xca\xe6\x9e\x8d
 # whole retrievor, use whole database as its own graph
 #myRtr=Retrievor.UndirectedG('addNodeEdgeDegree_R+rn+GMHM_undirected_alpha0.65_nodeD1.0_total_v3_csvneo4j','total_v3_csvneo4j','userdata')
 myRtr=Retrievor.UndirectedG('undirected(fortest)_R+G+SP+C+c','fortest','userdata')
+#myRtr=Retrievor.UndirectedG('addNodeEdgeDegree_G+SP+R_undirected_alpha0.65_nodeD1.0_total_v3_csvneo4j','total_v3_csvneo4j','userdata')
 print 'edges: ', len(myRtr.G.edges())
 print 'nodes: ', len(myRtr.G.nodes())
 
@@ -75,7 +76,39 @@ def survey_explore(info):
     generator = 'get_Rel_one'
     explorenodes, explorepaths, position = myRtr.my_Gen( info['N'],user,parameters,generator )
 
-    label_paths=[ ' --> '.join(p['labels']) for p in explorepaths ]
+    #label_paths=[ ' --> '.join(p['labels']) for p in explorepaths ]
+    label_paths = []
+    for p in explorepaths:
+        lp=p['labels']
+        label_paths.append( [ lp[0], ' --> '+' --> '.join(lp[1:]) ] )
+
+    response=json.dumps(label_paths)
+    return make_response(response)
+
+
+
+
+
+# survey explore
+@app.route('/survey_path/<info>')
+def survey_path(info):
+    info=json.loads(info)
+    #def my_Gen(self,N,user,parameters,generator,start=True):
+    # def get_pathsBetween_twonodes(self,source,target,tp,minhops,localnodes=None):
+    user = session['user']
+    parameters = {'source':info['start'],'target': info['end'], 'tp': info['tp'], 'minhops': 1,'localnodes':None}
+    generator = 'find_paths'
+    explorenodes, explorepaths, position = myRtr.my_Gen( info['N'],user,parameters,generator )
+
+    #label_paths=[ ' --> '.join(p['labels']) for p in explorepaths ]
+    label_paths = []
+    for p in explorepaths:
+        lp=p['labels']
+        if len(lp)>2:
+            label_paths.append( [ lp[0], ' --> '+' --> '.join(lp[1:-1])+' --> ', lp[-1] ] )
+        else:
+            label_paths.append([ lp[0], ' --> ', lp[1] ])
+
     response=json.dumps(label_paths)
     return make_response(response)
 

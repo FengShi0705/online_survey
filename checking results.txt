@@ -1,0 +1,126 @@
+----------Explore
+tp = ['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
+
+A---------- 
+1reverse osmosisdesalination --> reverse osmosis
+2nanofiltrationdesalination --> reverse osmosis --> nanofiltration
+3solar energydesalination --> solar energy
+4membranedesalination --> reverse osmosis --> membrane
+5forward osmosisdesalination --> forward osmosis
+6seawaterdesalination --> seawater
+7ultrafiltrationdesalination --> reverse osmosis --> ultrafiltration
+8membrane distillationdesalination --> membrane distillation
+9electrodialysisdesalination --> electrodialysis
+10foulingdesalination --> reverse osmosis --> fouling
+
+B----------
+1reverse osmosisdesalination --> reverse osmosis
+2forward osmosisdesalination --> forward osmosis
+3nanofiltrationdesalination --> reverse osmosis --> nanofiltration
+4membrane distillationdesalination --> membrane distillation
+5seawaterdesalination --> seawater
+6brackish waterdesalination --> brackish water
+7draw solutiondesalination --> forward osmosis --> draw solution
+8electrodialysisdesalination --> electrodialysis
+9solar stilldesalination --> solar still
+10internal concentration polarizationdesalination --> forward osmosis --> internal concentration polarization
+
+C----------
+1reverse osmosisdesalination --> reverse osmosis
+2solar energydesalination --> solar energy
+3forward osmosisdesalination --> forward osmosis
+4seawaterdesalination --> seawater
+5membranedesalination --> membrane
+6membrane distillationdesalination --> membrane distillation
+7electrodialysisdesalination --> electrodialysis
+8nanofiltrationdesalination --> nanofiltration
+9brackish waterdesalination --> brackish water
+10solar stilldesalination --> solar still
+
+D-----------------
+1reverse osmosisdesalination --> reverse osmosis
+2brackish waterdesalination --> brackish water
+3forward osmosisdesalination --> forward osmosis
+4humidification–dehumidificationdesalination --> humidification–dehumidification
+5humidificationdesalination --> humidification
+6solar stilldesalination --> solar still
+7membrane distillationdesalination --> membrane distillation
+8air gap membrane distillation(agmd)desalination --> air gap membrane distillation(agmd)
+9direct contact membrane distillationdesalination --> direct contact membrane distillation
+10water shortagedesalination --> water shortage
+
+E-------------------
+1reverse osmosisdesalination --> reverse osmosis
+2solar energydesalination --> solar energy
+3forward osmosisdesalination --> forward osmosis
+4seawaterdesalination --> seawater
+5membranedesalination --> membrane
+6membrane distillationdesalination --> membrane distillation
+7electrodialysisdesalination --> electrodialysis
+8nanofiltrationdesalination --> nanofiltration
+9brackish waterdesalination --> brackish water
+10solar stilldesalination --> solar still
+
+
+F--------------------
+1air gap membrane distillation(agmd)desalination --> air gap membrane distillation(agmd)
+2pilot testdesalination --> pilot test
+3humidification and dehumidificationdesalination --> humidification and dehumidification
+4electrodialysis(ed)desalination --> electrodialysis(ed)
+5dessalementdesalination --> dessalement
+6water production costdesalination --> water production cost
+7mechanical vapor compression(mvc)desalination --> mechanical vapor compression(mvc)
+8edrdesalination --> edr
+9silica inhibitiondesalination --> silica inhibition
+10bootdesalination --> boot
+
+
+
+
+-----------find path
+var tp = ['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
+
+A-----------
+1desalination --> reverse osmosis --> membrane --> diffusion --> innovation --> creativity
+2desalination --> membrane --> diffusion --> innovation --> creativity
+3desalination --> reverse osmosis --> nanofiltration --> membrane --> diffusion --> innovation --> creativity
+4desalination --> reverse osmosis --> membrane --> mass transfer --> diffusion --> innovation --> creativity
+5desalination --> reverse osmosis --> membrane --> adsorption --> diffusion --> innovation --> creativity
+
+B------------
+1desalination --> forward osmosis --> internal concentration polarization --> support structure --> layered manufacturing --> process planning --> computer-aided manufacturing --> computer-aided design --> conceptual design --> design cognition --> creativity
+2desalination --> electrodialysis --> anion-exchange membrane --> diffusion dialysis --> cation exchange membrane --> thermochemical hydrogen production --> hydrogen iodide decomposition --> si cycle --> sulfuric acid decomposition --> sulfur cycle --> msa --> lsa --> concreteness --> semantic cognition --> divergent thinking --> creativity
+3desalination --> electrodialysis --> anion-exchange membrane --> diffusion dialysis --> alkali recovery --> cation exchange membrane --> thermochemical hydrogen production --> hydrogen iodide decomposition --> si cycle --> sulfuric acid decomposition --> sulfur cycle --> msa --> lsa --> concreteness --> semantic cognition --> divergent thinking --> creativity
+4desalination --> electrodialysis --> anion-exchange membrane --> diffusion dialysis --> cation exchange membrane --> thermochemical hydrogen production --> iodine–sulfur cycle --> hydrogen iodide decomposition --> si cycle --> sulfuric acid decomposition --> sulfur cycle --> msa --> lsa --> concreteness --> semantic cognition --> divergent thinking --> creativity
+5desalination --> forward osmosis --> internal concentration polarization --> support structure --> layered manufacturing --> process planning --> computer-aided manufacturing --> computer-aided design --> industrial design --> psychology of design --> design cognition --> creativity
+
+
+C--------------
+1desalination --> design --> creativity
+2desalination --> performance --> creativity
+3desalination --> optimization --> design --> creativity
+4desalination --> sustainability --> creativity
+5desalination --> education --> creativity
+
+D---------------
+1desalination --> system design --> creativity
+2desalination --> design --> creativity
+3desalination --> performance --> creativity
+4desalination --> sustainability --> creativity
+5desalination --> technology --> creativity
+
+
+E------------------
+1desalination --> simulation --> creativity
+2desalination --> design --> creativity
+3desalination --> performance --> creativity
+4desalination --> sustainability --> creativity
+5desalination --> education --> creativity
+
+F-----------------
+1desalination --> system design --> creativity
+2desalination --> design --> creativity
+3desalination --> performance --> creativity
+4desalination --> simulation --> creativity
+5desalination --> sustainability --> creativity
+

@@ -11,9 +11,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Slabo+27px" rel="stylesheet">
 </head>
 <body>
-    <div id="Intro">
-        <p>Please input a keyword or concept in your field (e.g. Artificial Intelligence), and Let's do associative thinking.</p>
+    <div class="page1" style="display: none;">
+
+    <div class="Intro">
+        <p style="text-align:left;"><i>Here are two simple exercises. </i> </p>
+        <h3 style="text-align:left;"><i>Exercise 1: </i> </h3>
+        <p style="text-align:left">Please input a keyword or concept from your area (e.g. Artificial Intelligence), and press the Go! button to do associative thinking.</p>
         <input type="text" id="Explore">
+        <div class="w3-btn w3-blue" id="explore_go">Go!</div>
     </div>
 
 
@@ -36,11 +41,51 @@
             </tr>
             </tbody>
         </table>
-
-        <div id="spin" style="position:fixed; left:50%; top:50%;"></div>
+    </div>
 
     </div>
 
+<!------------------------------------------------------------------------------------------------------------------------------>
+
+    <div id="spin" style="position:fixed; left:50%; top:50%;"></div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+    <div class="page2" style="">
+        <div class="Intro">
+            <h3 style="text-align:left;"><i>Exercise 2: </i> </h3>
+            <p style="text-align:left;">
+                Now, input two seemingly unrelated keywords or concepts (e.g. 3D printing, cow). Then press the Go! button to connect this two concepts by searching relation paths between them.
+            </p>
+                <input type="text" id="path1"> <---- ? ---->
+                <input type="text" id="path2">
+                <div class="w3-btn w3-blue" id="path_go">Go!</div>
+
+        </div>
+
+        <div id="wrapper2">
+        <div id="wrapperdiv2">
+        </div>
+    </div>
+    <div id="outerpanel2" class="w3-border w3-border-blue">
+
+        <table style="table-layout:fixed; width:1860px;">
+            <tbody>
+            <tr>
+                <th>No.</th>
+                <th class="alg">A</th>
+                <th class="alg">B</th>
+                <th class="alg">C</th>
+                <th class="alg">D</th>
+                <th class="alg">E</th>
+                <th class="alg">F</th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+<!------------------------------------------------------------------------------------------------------------------------------>
+    <div class="w3-btn" style="position:fixed; bottom:10px; right:100px" onclick="PreviousPage()">Previous</div>
+    <div class="w3-btn" style="position:fixed; bottom:10px; right:10px" onclick="NextPage()">Next</div>
 
 
 

@@ -1,22 +1,24 @@
-#Intro{
+.Intro{
     position:relative;
     font-family: 'Roboto', sans-serif;
     font-size:16px;
-    left: 10px;
+    left: 30px;
+    margin-right: 80px;
+    text-align: center;
 }
 
-#wrapper, #outerpanel{
+#wrapper, #outerpanel, #wrapper2, #outerpanel2{
     font-family: 'Roboto', sans-serif;
     position:relative;
     margin:auto;
-    top: 10px;
+    top: 25px;
     overflow-x:scroll;
     width: 95%;
     overflow-y: hidden;
     border: 1px solid green;
 }
-#wrapper{height: 20px; }
-#wrapperdiv {width:1860px; height: 1px; }
+#wrapper, #wrapper2{height: 20px; }
+#wrapperdiv, #wrapperdiv2 {width:1860px; height: 1px; }
 
 table{
 border:none;
@@ -36,4 +38,5 @@ th,td{
     padding-bottom: 15px;
     padding-left: 15px;
     text-align:left;
+    vertical-align:top;
 }
