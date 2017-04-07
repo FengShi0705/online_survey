@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-#wrapper, #outerpanel, #wrapper2, #outerpanel2{
+#wrapper, #outerpanel, #wrapper1, #outerpanel1, #wrapper2, #outerpanel2{
     font-family: 'Roboto', sans-serif;
     position:relative;
     margin:auto;
@@ -17,8 +17,8 @@
     overflow-y: hidden;
     border: 1px solid green;
 }
-#wrapper, #wrapper2{height: 20px; }
-#wrapperdiv, #wrapperdiv2 {width:1860px; height: 1px; }
+#wrapper, #wrapper1, #wrapper2{height: 20px; }
+#wrapperdiv, #wrapperdiv1, #wrapperdiv2 {width:1860px; height: 1px; }
 
 table{
 border:none;

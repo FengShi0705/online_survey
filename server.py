@@ -72,7 +72,7 @@ def survey_explore(info):
     #def my_Gen(self,N,user,parameters,generator,start=True):
     #def get_Rel_one(self, ipt, tp, minhops, localnodes=None):
     user = session['user']
-    parameters = {'ipt':info['wid'],'tp':info['tp'],'minhops':1,'localnodes':None}
+    parameters = {'ipt':info['wid'],'tp':info['tp'],'minhops':info['minhops'],'localnodes':None}
     generator = 'get_Rel_one'
     explorenodes, explorepaths, position = myRtr.my_Gen( info['N'],user,parameters,generator )
 

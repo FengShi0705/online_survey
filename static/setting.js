@@ -43,5 +43,21 @@ $(function(){
     });
 });
 
+
+$(function(){
+    $("#wrapper1").scroll(function(){
+        $("#outerpanel1")
+            .scrollLeft($("#wrapper1").scrollLeft());
+    });
+    $("#outerpanel1").scroll(function(){
+        $("#wrapper1")
+            .scrollLeft($("#outerpanel1").scrollLeft());
+    });
+});
+
+
 var Loading_Spinner = new Spinner(Spinner_Opts).spin(d3.select('#spin').node());
 Unfreeze();
+
+TP_path=['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
+TP_explore=['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
