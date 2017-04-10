@@ -55,6 +55,12 @@ $(function(){
     });
 });
 
+$(function() {
+      $('.selectbar').barrating({
+        theme: 'bars-1to10'
+      });
+   });
+
 
 var Loading_Spinner = new Spinner(Spinner_Opts).spin(d3.select('#spin').node());
 Unfreeze();

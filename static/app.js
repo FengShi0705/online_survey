@@ -176,3 +176,20 @@ function NextPage(){
 
 
 }
+
+
+
+function Submit_userRating(){
+    var Q={};
+    for (var i = 1; i < 4; i++) {
+        Q[i]={};
+        for (var j = 1; j < 4; j++){
+            Q[i][j]=[];
+            var qid='#Q'+i+'-'+j+' select.selectbar';
+            d3.selectAll(qid).each(function(d){
+                Q[i][j].push( parseInt(d3.select(this).node().value) );
+            });
+        };
+    };
+    return Q;
+}
