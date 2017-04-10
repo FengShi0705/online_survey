@@ -1,15 +1,15 @@
 
 function Explore(panelid,minhops){
-    //remove original row
-    d3.selectAll(panelid + ' tr.results').remove();
+
     Freeze();
 
     if (panelid=='#outerpanel'){
     var word=d3.select('input#Explore').node().value;
-    Explore_Word=word;
+    var page=1;
     };
     if(panelid=='#outerpanel1'){
     var word = Explore_Word;
+    var page=2;
     };
 
     console.log(word);
@@ -17,6 +17,9 @@ function Explore(panelid,minhops){
     d3.json('/searchtexttowid/'+JSON.stringify(word), function(error,data){
 
         if(data){
+            fresh_page(page);
+            Explore_Word=word;
+
             var wid=data;
             var tp = TP_explore.slice()
             var N = 10;
@@ -37,8 +40,7 @@ function Explore(panelid,minhops){
 };
 
 function find_path(){
-    //remove original row;
-    d3.selectAll('#outerpanel2 tr.results').remove();
+
     Freeze();
 
     var word1 = d3.select('input#path1').node().value;
@@ -50,6 +52,10 @@ function find_path(){
             var wid1=data;
             d3.json('/searchtexttowid/'+JSON.stringify(word2), function(error,data){
                 if(data){
+                    fresh_page(page);
+                    Pathstart=word1;
+                    Pathend=word2;
+
                     var wid2=data;
                     var tp = TP_path.slice()
                     var N=5;
@@ -143,6 +149,9 @@ function Unfreeze(){
     d3.select('div#path_go').on('click',function(){
         find_path();
     });
+    d3.select('div#submit').on('click',function(){
+        Submit_userRating();
+    });
 
     d3.select('input#Explore').on("keydown", function(){
         if (d3.event.keyCode==13){
@@ -162,34 +171,56 @@ function Unfreeze(){
 };
 
 
-function NextPage(){
- if (d3.select('.page').style('display')=='block'){
-    d3.select('.page').style('display','none')
-    d3.select('.page1').style('display','block')
- }else if(d3.select('.page1').style('display')=='block'){
-    d3.select('.page1').style('display','none')
-    d3.select('.page2').style('display','block')
- }else{
-    d3.select('.page2').style('display','none')
-    d3.select('.page').style('display','block')
- };
+function showpage(n){
+    var pages=[1,2,3];
+    var i=pages.indexOf(n);
+    pages.splice(i, 1);
+    d3.select('#page'+n).style('display','block');
+    d3.select('#page'+pages[0]).style('display','none');
+    d3.select('#page'+pages[1]).style('display','none');
+    window.scrollTo(0, 0);
 
+};
 
-}
+function fresh_page(n){
+    $('div#page' + n + ' select.selectbar').barrating('clear');
+    d3.selectAll('div#page' + n + ' tr.results').remove();
+};
+
 
 
 
 function Submit_userRating(){
+    // user rating
     var Q={};
     for (var i = 1; i < 4; i++) {
         Q[i]={};
         for (var j = 1; j < 4; j++){
             Q[i][j]=[];
             var qid='#Q'+i+'-'+j+' select.selectbar';
-            d3.selectAll(qid).each(function(d){
-                Q[i][j].push( parseInt(d3.select(this).node().value) );
+            d3.selectAll(qid).each(function(d,g){
+
+                if( d3.select(this).node().value=='' ){
+                    alert('The group ' + ItoLetter[g] + ' in question '+ i +'.'+ j +' is not rated yet, Please complete it to finish this survey.')
+                    showpage(i);
+                    $('#Q'+i+'-'+j)[0].scrollIntoView( true );
+                    throw new Error('Not complete');
+                }else{
+                    Q[i][j].push( parseInt(d3.select(this).node().value) );
+                };
+
             });
         };
     };
-    return Q;
+    // user query
+    var info={'Explore':Explore_Word, 'pathstart':Pathstart, 'pathend':Pathend, 'userRating':Q};
+    d3.json('/user_rating/'+JSON.stringify(info), function(error,data){
+        if (data=='OK'){
+            d3.select('#page3').style('display','none');
+            d3.select('body').append('h3').text('Thank you! Your answer has been recorded')
+        }else{
+        alert ('Error occurs during submitting, Please submit again.')
+        };
+    });
+
 }

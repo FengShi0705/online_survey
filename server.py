@@ -113,6 +113,49 @@ def survey_path(info):
     return make_response(response)
 
 
+# user rating
+@app.route('/user_rating/<info>')
+def user_rating(info):
+    cnx, cursor = PF.creatCursor('userdata', 'W')
+    user=session['user']
+
+    Qy = ("""
+        insert into `User_rating` (`Email`, `Rating`)
+        VALUES (\'{}\',\'{}\')
+        """.format(user,info)
+          )
+    try:
+        cursor.execute(Qy)
+    except:
+        response = json.dumps('Fail')
+    else:
+        response=json.dumps('OK')
+
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
+    return make_response(response)
+
+
+def create_RatingTable():
+    cnx, cursor = PF.creatCursor('userdata', 'W')
+    Qy = ("""
+        create table `User_rating`
+        (
+         `id` bigint UNSIGNED not null auto_increment,
+         `Email` varchar(300) not null,
+         `Rating` longtext not null,
+         primary key(`id`),
+         index(`Email`(200))
+         )
+         """)
+    cursor.execute(Qy)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+    return
+
 #####--------------------------------- end for survey------------------------------------------------
 
 
