@@ -6,6 +6,8 @@ from user_Feedback.recordUser import record_thread,error_thread,userQuestion
 from Private import PF
 import time
 from time import gmtime, strftime
+import urllib2
+import urllib
 
 
 app = Flask(__name__)
@@ -53,6 +55,51 @@ def mobile():
     return make_response(open('m-index.html').read())
 
 #####--------------------------------- for survey------------------------------------------------
+
+def get_wiki(word):
+    """
+    get see also from wikipedia
+    :param word: word to input
+    :return: related words in see also section
+    """
+    #clear word
+    word = PF.clean_inputs([word])
+    #find section
+    url = 'https://en.wikipedia.org/w/api.php'
+    # https://en.wikipedia.org/w/api.php?action=parse&page=desalination&prop=sections
+    values = {'action': 'parse',
+              'page': word,
+              'prop': 'sections',
+              'format': 'json'}
+    data = urllib.urlencode(values)
+    req = urllib2.Request(url, data)
+    response = urllib2.urlopen(req)
+    the_page = response.read()
+    sec_dic=json.loads(the_page)
+    sections = sec_dic['parse']['sections']
+
+    for sec in sections:
+        if sec['line']=="See also":
+            secid=sec['index']
+            break
+
+    #get section content
+    # https://en.wikipedia.org/w/api.php?action=parse&page=desalination&section=38
+    values = {'action': 'parse',
+              'page': word,
+              'section': secid,
+              'format': 'json'}
+    data = urllib.urlencode(values)
+    req = urllib2.Request(url, data)
+    response = urllib2.urlopen(req)
+    the_page = response.read()
+    sec_cont = json.loads(the_page)
+    see_also = sec_cont['parse']['text']['*']
+
+
+
+
+
 
 #transfer searchtext to wid
 @app.route('/searchtexttowid/<info>')
