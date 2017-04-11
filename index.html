@@ -14,10 +14,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Slabo+27px" rel="stylesheet">
 </head>
 <body>
-    <div class="page" style="display: none;">
+    <div id="page1" style="">
 
     <div class="Intro">
-        <p style="text-align:left;"><i>Here are two simple exercises. </i> </p>
         <h3 style="text-align:left;"><i>Exercise 1: </i> </h3>
         <p style="text-align:left">Please input a keyword or concept from your area (e.g. Artificial Intelligence), and press the Go! button to do associative thinking.</p>
         <input type="text" id="Explore">
@@ -369,15 +368,18 @@
 
         <br style="clear: left;" />
         </div>
+
+        <div class="w3-btn w3-blue pagebutton" onclick="showpage(2)">Save & Next</div>
     </div>
 
 
     </div>
 
 
-    <div class="page1" style="display: none;">
+    <div id="page2" style="display: none;">
 
     <div class="Intro">
+        <h3 style="text-align:left;"><i>Exercise 2: </i> </h3>
         <p style="text-align:left">Let's go a step further to conduct deeper associative thinking by using the same input.</p>
         <div class="w3-btn w3-blue" id="explore_go1">Go!</div>
     </div>
@@ -405,10 +407,13 @@
     </div>
 
     <div class="Questions">
-        <p> <b>As shown above, six groups of results (A, B, C, D, E and F) are generated to associate with your input.</b></p>
-        <div id="Q2.1">
+        <p> <b>Questions: </b></p>
+        <div id="Q2-1">
         <div>
-            1.1 Please evaluate whether each group is closely related to your input concept, and rate each group on a rating scale of 1-10, where 1 is ‘not at all relevant’ and 10 is ‘very relevant’.
+            <p style="text-indent:-25px; padding-left:25px;">
+            2.1 Now, six groups of results (A, B, C, D, E and F) are generated to associate with your input. Please evaluate each group in terms of how relevant the associations are related to your input concept.<br>
+                Use a rating scale of 1-10, with 1 as <span style="color:blue">‘not at all relevant’</span> and 10 as <span style="color:blue">‘very relevant’</span>.
+            </p>
         </div>
             <div class="bar">
             A
@@ -510,9 +515,12 @@
 
         <br style="clear: left;" />
         </div>
-        <div id="Q2.2">
+        <div id="Q2-2">
         <div>
-            1.1 Please evaluate whether each group is closely related to your input concept, and rate each group on a rating scale of 1-10, where 1 is ‘not at all relevant’ and 10 is ‘very relevant’.
+            <p style="text-indent:-25px; padding-left:25px;">
+                2.2 Please evaluate the concepts generated in each group in terms of how general(common) or specific(professional) they are.<br>
+            Rate each group by scale of 1-10, with 1 as <span style="color:blue">‘very general and common concepts(knowledge)’</span> and 10 as <span style="color:blue">‘very specific and detailed concepts (knowledge)’</span>.
+            </p>
         </div>
             <div class="bar">
             A
@@ -614,9 +622,12 @@
 
         <br style="clear: left;" />
         </div>
-        <div id="Q2.3">
+        <div id="Q2-3">
         <div>
-            1.1 Please evaluate whether each group is closely related to your input concept, and rate each group on a rating scale of 1-10, where 1 is ‘not at all relevant’ and 10 is ‘very relevant’.
+            <p style="text-indent:-25px; padding-left:25px;">
+            2.3 Please evaluate the associations in each group in terms of whether they have provoke/inspired you with some interesting ideas.<br>
+            Rate each group on a rating scale of 1-10, with 1 as <span style="color:blue">‘Not inspired with any ideas at all by this group’</span> and 10 as <span style="color:blue">‘Inspired with a lot of interesting ideas by this group’</span>.
+            </p>
         </div>
             <div class="bar">
             A
@@ -718,6 +729,8 @@
 
         <br style="clear: left;" />
         </div>
+        <div class="w3-btn w3-blue pagebutton" onclick="showpage(1)">Previous</div>
+        <div class="w3-btn w3-blue pagebutton" onclick="showpage(3)">Save & Next</div>
     </div>
 
     </div>
@@ -728,9 +741,9 @@
 
     <div id="spin" style="position:fixed; left:50%; top:50%;"></div>
 <!------------------------------------------------------------------------------------------------------------------------------>
-    <div class="page2" style="">
+    <div id="page3" style="display: none;">
         <div class="Intro">
-            <h3 style="text-align:left;"><i>Exercise 2: </i> </h3>
+            <h3 style="text-align:left;"><i>Exercise 3: </i> </h3>
             <p style="text-align:left;">
                 In this exercise, please input two seemingly unrelated keywords or concepts (e.g. 3D printing, cow). Then press the Go! button to connect this two concepts by searching relation paths between them.
             </p>
@@ -762,10 +775,13 @@
     </div>
 
     <div class="Questions">
-        <p> <b>As shown above, six groups of results (A, B, C, D, E and F) are generated to associate with your input.</b></p>
-        <div id="Q3.1">
+        <p> <b>Questions: </b></p>
+        <div id="Q3-1">
         <div>
-            1.1 Please evaluate whether each group is closely related to your input concept, and rate each group on a rating scale of 1-10, where 1 is ‘not at all relevant’ and 10 is ‘very relevant’.
+            <p style="text-indent:-25px; padding-left:25px;">
+            3.1 Now, six groups of results (A, B, C, D, E and F) are generated to associate with your input. Please evaluate each group in terms of how relevant the associations are related to your input concept.<br>
+                Use a rating scale of 1-10, with 1 as <span style="color:blue">‘not at all relevant’</span> and 10 as <span style="color:blue">‘very relevant’</span>.
+            </p>
         </div>
             <div class="bar">
             A
@@ -867,9 +883,12 @@
 
         <br style="clear: left;" />
         </div>
-        <div id="Q3.2">
+        <div id="Q3-2">
         <div>
-            1.1 Please evaluate whether each group is closely related to your input concept, and rate each group on a rating scale of 1-10, where 1 is ‘not at all relevant’ and 10 is ‘very relevant’.
+            <p style="text-indent:-25px; padding-left:25px;">
+                3.2 Please evaluate the concepts generated in each group in terms of how general(common) or specific(professional) they are.<br>
+            Rate each group by scale of 1-10, with 1 as <span style="color:blue">‘very general and common concepts(knowledge)’</span> and 10 as <span style="color:blue">‘very specific and detailed concepts (knowledge)’</span>.
+            </p>
         </div>
             <div class="bar">
             A
@@ -971,9 +990,12 @@
 
         <br style="clear: left;" />
         </div>
-        <div id="Q3.3">
+        <div id="Q3-3">
         <div>
-            1.1 Please evaluate whether each group is closely related to your input concept, and rate each group on a rating scale of 1-10, where 1 is ‘not at all relevant’ and 10 is ‘very relevant’.
+            <p style="text-indent:-25px; padding-left:25px;">
+            3.3 Please evaluate the associations in each group in terms of whether they have provoke/inspired you with some interesting ideas.<br>
+            Rate each group on a rating scale of 1-10, with 1 as <span style="color:blue">‘Not inspired with any ideas at all by this group’</span> and 10 as <span style="color:blue">‘Inspired with a lot of interesting ideas by this group’</span>.
+            </p>
         </div>
             <div class="bar">
             A
@@ -1075,12 +1097,14 @@
 
         <br style="clear: left;" />
         </div>
+
+        <div class="w3-btn w3-blue pagebutton" style="" onclick="showpage(2)">Previous</div>
+        <div class="w3-btn w3-blue pagebutton" id="submit">Submit</div>
     </div>
 
     </div>
 <!------------------------------------------------------------------------------------------------------------------------------>
-    <div class="w3-btn" style="position:fixed; bottom:10px; right:100px" onclick="PreviousPage()">Previous</div>
-    <div class="w3-btn" style="position:fixed; bottom:10px; right:10px" onclick="NextPage()">Next</div>
+
 
 
 

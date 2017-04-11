@@ -67,3 +67,4 @@ Unfreeze();
 
 TP_path=['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
 TP_explore=['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
+ItoLetter=['A','B','C','D','E','F','G']
