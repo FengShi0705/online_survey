@@ -8,6 +8,8 @@ import time
 from time import gmtime, strftime
 import urllib2
 import urllib
+from lxml import html
+from random import shuffle
 
 
 app = Flask(__name__)
@@ -16,8 +18,8 @@ app.secret_key='\x8b\x19\xa1\xb0D\x87?\xc1M\x04\xff\xc8\xbdE\xb1\xca\xe6\x9e\x8d
 # Initial Data
 # whole retrievor, use whole database as its own graph
 #myRtr=Retrievor.UndirectedG('addNodeEdgeDegree_R+rn+GMHM_undirected_alpha0.65_nodeD1.0_total_v3_csvneo4j','total_v3_csvneo4j','userdata')
-myRtr=Retrievor.UndirectedG('undirected(fortest)_R+G+SP+C+c','fortest','userdata')
-#myRtr=Retrievor.UndirectedG('addNodeEdgeDegree_G+SP+R_undirected_alpha0.65_nodeD1.0_total_v3_csvneo4j','total_v3_csvneo4j','userdata')
+#myRtr=Retrievor.UndirectedG('undirected(fortest)_R+G+SP+C+c','fortest','userdata')
+myRtr=Retrievor.UndirectedG('addNodeEdgeDegree_G+SP+R_undirected_alpha0.65_nodeD1.0_total_v3_csvneo4j','total_v3_csvneo4j','userdata')
 print 'edges: ', len(myRtr.G.edges())
 print 'nodes: ', len(myRtr.G.nodes())
 
@@ -56,14 +58,15 @@ def mobile():
 
 #####--------------------------------- for survey------------------------------------------------
 
-def get_wiki(word):
+def parse_wiki(word):
     """
     get see also from wikipedia
     :param word: word to input
     :return: related words in see also section
     """
     #clear word
-    word = PF.clean_inputs([word])
+    word = word.encode('utf-8')
+    word = PF.clean_inputs([word])[0]
     #find section
     url = 'https://en.wikipedia.org/w/api.php'
     # https://en.wikipedia.org/w/api.php?action=parse&page=desalination&prop=sections
@@ -96,6 +99,33 @@ def get_wiki(word):
     sec_cont = json.loads(the_page)
     see_also = sec_cont['parse']['text']['*']
 
+    #get output
+    tree = html.fromstring(see_also)
+    relatedwords = tree.xpath('//li/a/text()')
+    #shuffle(relatedwords)
+    #outputsword = relatedwords[0:10]
+
+    return relatedwords
+
+
+
+#get wiki
+@app.route('/get_wiki/<info>')
+def get_wiki(info):
+    word = json.loads(info)
+    try:
+        output_words = parse_wiki(word)
+    except:
+        response = json.dumps(None)
+    else:
+        if len(output_words) == 0:
+            response = json.dumps(None)
+        else:
+            shuffle(output_words)
+            outputsword = output_words[0:10]
+            response = json.dumps(outputsword)
+
+    return make_response(response)
 
 
 

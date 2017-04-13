@@ -65,6 +65,30 @@ $(function() {
 var Loading_Spinner = new Spinner(Spinner_Opts).spin(d3.select('#spin').node());
 Unfreeze();
 
+
+function ShuFFle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+
+
 TP_path=['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
-TP_explore=['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
+TP_path = ShuFFle(TP_path);
+TP_explore=TP_path.slice();
+TP_explore.push('wiki')
 ItoLetter=['A','B','C','D','E','F','G']

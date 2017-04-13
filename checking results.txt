@@ -76,6 +76,86 @@ F--------------------
 
 
 
+----------Explore HOP2
+tp = ['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
+
+A-------------
+1nanofiltrationdesalination --> reverse osmosis --> nanofiltration
+2membranedesalination --> reverse osmosis --> membrane
+3ultrafiltrationdesalination --> reverse osmosis --> ultrafiltration
+4foulingdesalination --> reverse osmosis --> fouling
+5microfiltrationdesalination --> reverse osmosis --> ultrafiltration --> microfiltration
+6separationdesalination --> reverse osmosis --> membrane --> separation
+7fuel celldesalination --> reverse osmosis --> membrane --> fuel cell
+8biofoulingdesalination --> reverse osmosis --> biofouling
+9renewable energydesalination --> solar energy --> renewable energy
+10pervaporationdesalination --> reverse osmosis --> membrane --> pervaporation
+
+B-------------
+1nanofiltrationdesalination --> reverse osmosis --> nanofiltration
+2draw solutiondesalination --> forward osmosis --> draw solution
+3internal concentration polarizationdesalination --> forward osmosis --> internal concentration polarization
+4solar distillationdesalination --> solar still --> solar distillation
+5solar desalinationdesalination --> solar still --> solar desalination
+6biofoulingdesalination --> reverse osmosis --> biofouling
+7pressure retarded osmosisdesalination --> forward osmosis --> pressure retarded osmosis
+8external concentration polarizationdesalination --> forward osmosis --> internal concentration polarization --> external concentration polarization
+9bipolar membranedesalination --> electrodialysis --> bipolar membrane
+10ion-exchange membranedesalination --> electrodialysis --> ion-exchange membrane
+
+C------------------
+1genetic algorithmdesalination --> optimization --> genetic algorithm
+2kineticsdesalination --> adsorption --> kinetics
+3activated carbondesalination --> adsorption --> activated carbon
+4seawater desalinationdesalination --> reverse osmosis --> seawater desalination
+5response surface methodologydesalination --> optimization --> response surface methodology
+6fuel celldesalination --> membrane --> fuel cell
+7isothermdesalination --> adsorption --> isotherm
+8desorptiondesalination --> adsorption --> desorption
+9diffusiondesalination --> membrane --> diffusion
+10biomassdesalination --> renewable energy --> biomass
+
+D------------------
+1compression de vapeur mécaniquedesalination --> mechanical vapor compression --> compression de vapeur mécanique
+2lng cold energydesalination --> freeze desalination --> lng cold energy
+3thermolytic solutiondesalination --> ammonium bicarbonate --> thermolytic solution
+4condenser tube failuredesalination --> multi-stage flash --> condenser tube failure
+5coal seam gas(csg)produced waterdesalination --> brine management --> coal seam gas(csg)produced water
+6wadi gazadesalination --> gaza strip --> wadi gaza
+7qual2kwdesalination --> agricultural drainage water --> qual2kw
+8feed solutiondesalination --> draw solution --> feed solution
+9radiative condenserdesalination --> water production --> radiative condenser
+10trickledesalination --> still --> trickle
+
+E---------------------
+1surface structuredesalination --> morphology --> surface structure
+2roughnessdesalination --> morphology --> roughness
+3and topographydesalination --> morphology --> and topography
+4validitydesalination --> reliability --> validity
+5kineticsdesalination --> adsorption --> kinetics
+6activated carbondesalination --> adsorption --> activated carbon
+7isothermdesalination --> adsorption --> isotherm
+8desorptiondesalination --> adsorption --> desorption
+9scanning tunneling microscopydesalination --> morphology --> scanning tunneling microscopy
+10microstructuredesalination --> hardness --> microstructure
+
+
+F----------------
+1lng cold energydesalination --> freeze desalination --> lng cold energy
+2compression de vapeur mécaniquedesalination --> mechanical vapor compression --> compression de vapeur mécanique
+3thermolytic solutiondesalination --> ammonium bicarbonate --> thermolytic solution
+4wadi gazadesalination --> gaza strip --> wadi gaza
+5electrosorption capacitydesalination --> capacitive deionization(cdi) --> electrosorption capacity
+6activated carbon cloth(acc)desalination --> capacitive deionization(cdi) --> activated carbon cloth(acc)
+7membrane capacitive deionization(mcdi)desalination --> capacitive deionization(cdi) --> membrane capacitive deionization(mcdi)
+8thermal vapour compressiondesalination --> mechanical vapour compression --> thermal vapour compression
+9compression mécanique de vapeurdesalination --> mechanical vapour compression --> compression mécanique de vapeur
+10ion backward migration preventiondesalination --> membrane-free electrodeionization --> ion backward migration prevention
+
+
+
+
+
 
 -----------find path
 var tp = ['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
