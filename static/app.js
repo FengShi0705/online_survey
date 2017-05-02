@@ -30,6 +30,7 @@ function Explore(panelid,minhops){
             if (panelid=='#outerpanel1'){
                 var tp = TP_explore.slice(0,6)
                 add_algorithms(null, panelid, minhops, wid, tp, N, 0);
+                $('#page2 .Questions').show()
             }else{
                 // change intro text of page2
                 d3.select('span#query_exercise2').text(Explore_Word);
@@ -39,10 +40,12 @@ function Explore(panelid,minhops){
                         var tp = TP_explore.slice(0,6);
                         layout_page1(6);
                         add_algorithms(data, panelid, minhops, wid,tp,N,0);
+                        $('#page1 .Questions').show()
                     }else{
                         var tp = TP_explore.slice();
                         layout_page1(7);
                         add_algorithms(data, panelid, minhops, wid,tp,N,0);
+                        $('#page1 .Questions').show()
                     };
 
                 });
@@ -87,6 +90,7 @@ function find_path(){
 
                     //add pathsalgorithms
                     paths_algorithms(wid1,wid2,tp,N,0);
+                    $('#page3 .Questions').show()
                 }else{
                     alert('Can not find your second input');
                     Unfreeze();
@@ -291,7 +295,7 @@ function layout_page1(n){
     d3.selectAll('#outerpanel table, #wrapperdiv').style('width',width+'px');
 
     // layout rating
-    var values=['','1','2','3','4','5','6','7','8','9','10']
+    var values=['','-5','-4','-3','-2','-1','0','1','2','3','4','5']
     d3.select('#page1 div.Questions').selectAll('div.bar,br').remove();
     for (var i =1; i<4; i++){
         var bars=d3.select('#page1 div.Questions').select('#Q1-'+i).selectAll('div.bar').data(headers.slice(0,n))
