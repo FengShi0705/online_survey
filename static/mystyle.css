@@ -64,3 +64,13 @@ th,td{
     font-family: 'Roboto', sans-serif;
 
 }
+
+.rating{
+    font-family: 'Roboto', sans-serif;
+    position:relative;
+    margin:auto;
+    overflow-x:scroll;
+    width: 95%;
+    overflow-y: hidden;
+    border: 1px solid green;
+}
