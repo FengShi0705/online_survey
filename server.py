@@ -10,6 +10,8 @@ import urllib2
 import urllib
 from lxml import html
 from random import shuffle
+from nltk.corpus import wordnet as wn
+import requests
 
 
 app = Flask(__name__)
@@ -110,21 +112,125 @@ def parse_wiki(word):
 
 
 #get wiki
-@app.route('/get_wiki/<info>')
 def get_wiki(info):
-    word = json.loads(info)
+    word = info
     try:
         output_words = parse_wiki(word)
     except:
-        response = json.dumps(None)
+        #response = json.dumps(None)
+        outputsword = []
     else:
         if len(output_words) == 0:
-            response = json.dumps(None)
+            #response = json.dumps(None)
+            outputsword = []
         else:
             shuffle(output_words)
             outputsword = output_words[0:10]
-            response = json.dumps(outputsword)
+            #response = json.dumps(outputsword)
 
+    return outputsword
+
+def ran_sel(array,n):#checked OK
+    shuffle(array)
+    return array[0:n]
+
+def get_wordnet(word): #checked OK
+    """
+    get related words from wordNet
+    :param word: cleaned word!!!!!!!!!!!!!
+    :return: ten related words
+    """
+    word=word.replace(' ','_')
+    related_words=[]
+    for syn in wn.synsets(word):
+        for hypo in syn.hyponyms():
+            related_words.append( ran_sel(hypo.lemma_names(),1)[0] )
+        for mem in syn.member_holonyms():
+            related_words.append( ran_sel(mem.lemma_names(),1 )[0] )
+
+        sisters = []
+        for hyper in syn.hypernyms():
+            related_words.append(ran_sel(hyper.lemma_names(), 1)[0])
+            for sis in hyper.hyponyms():
+                sisters.append(ran_sel(sis.lemma_names(), 1)[0])
+        N_s = max( len(related_words), 10-len(related_words) )
+        for sisterm in ran_sel(sisters,N_s):
+            related_words.append(sisterm)
+
+        if len(related_words)>=10:
+            break
+
+    #if len(related_words)==0:
+    #    related_words=['null' for i in xrange(0,10)]
+
+    shuffle(related_words)
+    return related_words[0:10]
+
+def get_conceptnet(word): #checked OK
+    """
+    get related words from conceptNet
+    :param word: cleaned word!!!!!!!!!!!!!, lower case
+    :return: ten related words
+    """
+    word=word.replace(' ','_')
+    obj = requests.get('http://api.conceptnet.io/related/c/en/{}?limit=20&filter=/c/en'.format(word)).json()
+    reldic=obj['related']
+    related_words=[]
+    for n in reldic:
+        w=n["@id"].replace('/c/en/','')
+        w=w.replace('_',' ')
+        related_words.append(w)
+
+    print 'ok'
+    return ran_sel(related_words,10)
+
+
+def get_Nell(word): #checked OK
+    """
+    get related words from NeLL
+    :param word: cleaned word!!!!!!!, lower case
+    :return: ten related words
+    """
+    word = word.replace(' ', '_')
+    obj = requests.get('http://rtw.ml.cmu.edu/rtw/api/json0?lit1={}&predicate=*&lit2=*&agent=KB'.format(word)).json()
+    items = obj['items']
+    related_words = set()
+    for item in items[0:100]:
+        word=item['ent2'].split(':')[-1]
+        word=word.replace('_',' ')
+        related_words.add(word)
+        if len(related_words)>=100:
+            break
+
+    related_words=list(related_words)
+    #if len(related_words)==0:
+    #    related_words = ['null' for i in xrange(0, 10)]
+
+    return ran_sel(related_words,10)
+
+
+@app.route('/various_explore/<info>')
+def various_explore(info):
+    info = json.loads(info)
+    wid = info['wid']
+    word=myRtr.G.node[wid]['label']
+    word=word.encode('utf-8') #word cleaned
+    word=word.lower()
+    fundic={'WordNet':get_wordnet,'ConceptNet':get_conceptnet,'NeLL':get_Nell,'wiki':get_wiki}
+
+    if info['tp'] in fundic.keys():
+        related_words=fundic[info['tp']](word)
+        label_paths = [ [word, '-->'+relatedword] for relatedword in related_words ]
+    else:
+        label_paths=survey_explore(info)
+
+    while len(label_paths)<10:
+        if len(label_paths)==0:
+            label_paths.append(['Null',' '])
+        else:
+            label_paths.append([' ',' '])
+
+    response = json.dumps(label_paths)
     return make_response(response)
 
 
@@ -143,9 +249,9 @@ def searchtexttowid(info):
     return make_response(response)
 
 # survey explore
-@app.route('/survey_explore/<info>')
+#@app.route('/survey_explore/<info>')
 def survey_explore(info):
-    info=json.loads(info)
+    #info=json.loads(info)
     #def my_Gen(self,N,user,parameters,generator,start=True):
     #def get_Rel_one(self, ipt, tp, minhops, localnodes=None):
     user = session['user']
@@ -159,8 +265,8 @@ def survey_explore(info):
         lp=p['labels']
         label_paths.append( [ lp[0], ' --> '+' --> '.join(lp[1:]) ] )
 
-    response=json.dumps(label_paths)
-    return make_response(response)
+
+    return label_paths
 
 
 

@@ -89,6 +89,9 @@ function ShuFFle(array) {
 
 TP_path=['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']
 TP_path = ShuFFle(TP_path);
-TP_explore=TP_path.slice();
-TP_explore.push('wiki')
+TP_hop = TP_path.slice();
+
+TP_explore=ShuFFle(['R_n_HM','R_r_HM','R_n_GM','R_r_GM','R_n_AM','R_r_AM']).slice(0,4).concat( ShuFFle(['WordNet','ConceptNet','NeLL','wiki']).slice(0,2) );
+TP_explore=ShuFFle(TP_explore);
+
 ItoLetter=['A','B','C','D','E','F','G']

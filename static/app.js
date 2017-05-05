@@ -28,29 +28,16 @@ function Explore(panelid,minhops){
             };
             //add algorithms
             if (panelid=='#outerpanel1'){
-                var tp = TP_explore.slice(0,6)
-                add_algorithms(null, panelid, minhops, wid, tp, N, 0);
+                var tp = TP_hop.slice(0,6)
+                add_algorithms( panelid, minhops, wid, tp, N, 0);
                 $('#page2 .Questions').show()
             }else{
                 // change intro text of page2
                 d3.select('span#query_exercise2').text(Explore_Word);
-                d3.json('/get_wiki/'+JSON.stringify(word), function(error,data){
-                    console.log(data);
-                    if(data==null){
-                        var tp = TP_explore.slice(0,6);
-                        layout_page1(6);
-                        add_algorithms(data, panelid, minhops, wid,tp,N,0);
-                        $('#page1 .Questions').show()
-                    }else{
-                        var tp = TP_explore.slice();
-                        layout_page1(7);
-                        add_algorithms(data, panelid, minhops, wid,tp,N,0);
-                        $('#page1 .Questions').show()
-                    };
-
-                });
-
-
+                var tp = TP_explore.slice();
+                layout_page1(6);
+                add_algorithms( panelid, minhops, wid,tp,N,0);
+                $('#page1 .Questions').show()
 
             };
 
@@ -131,39 +118,21 @@ function paths_algorithms(wid1,wid2,tp,N,i){
 };
 
 
-function add_algorithms(wiki, panelid, minhops, wid,tp,N,i){
+function add_algorithms( panelid, minhops, wid,tp,N,i){
     if( i <= tp.length-1 ){
 
-        if(tp[i]=='wiki'){
+        var info={'tp': tp[i] ,'wid':wid, 'N':N, 'minhops':minhops};
+        d3.json('/various_explore/'+JSON.stringify(info), function(error,data){
 
-            var explore_rows = d3.select(panelid).selectAll('tr.results').data(wiki)
-                                                                         .append('td')
-                                                                         .attr('class','alg');
+            var explore_rows = d3.select(panelid).selectAll('tr.results').data(data)
+                                                                               .append('td')
+                                                                               .attr('class','alg');
 
-            explore_rows.append('span').style('font-weight','bold').text(function(d){return ExploreOriginalword;});
-            explore_rows.append('span').text(function(d){return ' --> '+d;});
+            explore_rows.append('span').style('font-weight','bold').text(function(d){return d[0];});
+            explore_rows.append('span').text(function(d){return d[1];});
 
-            add_algorithms(wiki, panelid, minhops,wid,tp,N,i+1);
-
-        }else{
-
-            var info={'tp': tp[i] ,'wid':wid, 'N':N, 'minhops':minhops};
-            d3.json('/survey_explore/'+JSON.stringify(info), function(error,data){
-                ExploreOriginalword=data[0][0];
-
-                var explore_rows = d3.select(panelid).selectAll('tr.results').data(data)
-                                                                                   .append('td')
-                                                                                   .attr('class','alg');
-
-                explore_rows.append('span').style('font-weight','bold').text(function(d){return d[0];});
-                explore_rows.append('span').text(function(d){return d[1];});
-
-                add_algorithms(wiki, panelid, minhops,wid,tp,N,i+1);
-            });
-
-        };
-
-
+            add_algorithms(panelid, minhops,wid,tp,N,i+1);
+        });
 
     }else{
         Unfreeze();
@@ -235,6 +204,7 @@ function fresh_page(n){
 
 
 function Submit_userRating(){
+    var group_alg={1:TP_explore, 2:TP_hop, 3: TP_path}
     // user rating
     var Q={};
     for (var i = 1; i < 4; i++) {
@@ -251,7 +221,7 @@ function Submit_userRating(){
                     throw new Error('Not complete');
                 }else{
                     //Q[i][j].push(  );
-                    Q[i][j][TP_explore[g]]=parseInt(d3.select(this).node().value);
+                    Q[i][j][ group_alg[i][g] ]=parseInt(d3.select(this).node().value);
                 };
 
             });
