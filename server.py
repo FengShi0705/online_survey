@@ -224,7 +224,7 @@ def various_explore(info):
     else:
         label_paths=survey_explore(info)
 
-    while len(label_paths)<10:
+    while len(label_paths)<info['N']:
         if len(label_paths)==0:
             label_paths.append(['Null',' '])
         else:
@@ -291,6 +291,12 @@ def survey_path(info):
             label_paths.append( [ lp[0], ' --> '+' --> '.join(lp[1:-1])+' --> ', lp[-1] ] )
         else:
             label_paths.append([ lp[0], ' --> ', lp[1] ])
+
+    while len(label_paths)<info['N']:
+        if len(label_paths)==0:
+            label_paths.append(['Null',' ',' '])
+        else:
+            label_paths.append([' ',' ',' '])
 
     response=json.dumps(label_paths)
     return make_response(response)
