@@ -123,6 +123,8 @@ def get_wiki(info):
         else:
             shuffle(output_words)
             outputsword = output_words[0:10]
+            while len(outputsword)<10:
+                outputsword.append(' ')
             response = json.dumps(outputsword)
 
     return make_response(response)
@@ -159,6 +161,8 @@ def survey_explore(info):
         lp=p['labels']
         label_paths.append( [ lp[0], ' --> '+' --> '.join(lp[1:]) ] )
 
+    while len(label_paths)<info['N']:
+        label_paths.append([' ', ' '])
     response=json.dumps(label_paths)
     return make_response(response)
 
@@ -186,6 +190,8 @@ def survey_path(info):
         else:
             label_paths.append([ lp[0], ' --> ', lp[1] ])
 
+    while len(label_paths)<info['N']:
+        label_paths.append([' ', ' ', ' '])
     response=json.dumps(label_paths)
     return make_response(response)
 
