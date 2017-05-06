@@ -43,27 +43,305 @@
         <p> <b>Questions: </b></p>
         <div id="Q1-1">
         <div>
-            <p style="text-indent:-25px; padding-left:25px;">
-            1.1 Now, <span id="changheadQ">six groups of results (A, B, C, D, E and F)</span> are generated to associate with your input. Please evaluate each group in terms of how relevant the associations are related to your input concept.<br>
-                Use a rating scale of -5 ~ 5, with -5 being <span style="color:blue">‘not at all relevant’</span> and 5 being <span style="color:blue">‘very relevant’</span>.
+            <p style="text-indent:-17px; padding-left:17px;">
+                1. Now, six groups of results (A, B, C, D, E and F) are generated to associate with your input. <br>
+                Please evaluate the associations of <b>each group</b> in terms of the relevancy, informativity and specificity, using a rating scale of -5 ~ 5:
             </p>
+            <ul style="position:relative; top:-15px;">
+                    <li>For relevancy, -5 means <span style="color:blue">‘the associations generated in this group are NOT at all relevant and NOT related to your input’</span>, and 5 being <span style="color:blue">‘very relevant to your input’</span>.</li>
+                    <li>For informativity,  -5 means <span style="color:blue">‘the associations generated in this group are NOT informative and NOT insightful at all ’</span>, and 5 being <span style="color:blue">‘very informative and insightful’</span>.</li>
+                    <li>For specificity, -5 means <span style="color:blue">‘the generated concepts in this group are very general and common concepts/knowledge ’</span>, and 5 being <span style="color:blue">‘very specific, detailed, and professional concepts/knowledge’</span>.</li>
+            </ul>
+            <p style="position:relative; top:-15px;">P.s. If the result of a group happens to be 'Null', please just rate -5 for all the criteria of relevancy, informativity, specificity. </p>
+
         </div>
-        </div>
-        <div id="Q1-2">
-        <div>
-            <p style="text-indent:-25px; padding-left:25px;">
-                1.2 Please evaluate the concepts generated in each group in terms of how general(common) or specific(professional) they are.<br>
-            Rate each group by a scale of -5 ~ 5, with -5 as <span style="color:blue">‘very general and common concepts(knowledge)’</span> and 5 as <span style="color:blue">‘very specific, detailed, and professional concepts (knowledge)’</span>.
-            </p>
-        </div>
-        </div>
-        <div id="Q1-3">
-        <div>
-            <p style="text-indent:-25px; padding-left:25px;">
-            1.3 Please evaluate the associations in each group in terms of whether they have provoked/inspired you with some interesting ideas.<br>
-            Rate each group on a rating scale of -5 ~ 5, with -5 as <span style="color:blue">‘Not inspired with any ideas at all by this group’</span> and 5 as <span style="color:blue">‘Inspired with a lot of interesting ideas by this group’</span>.
-            </p>
-        </div>
+            <div class="rating">
+            <div style="width:1860px;">
+                <div style="float:left;position:relative;top:8px;left:10px;">
+                    <p style="padding-top:15px;">Relevancy</p>
+                    <p style="padding-top:15px;">Informativity</p>
+                    <p style="padding-top:15px;">General or specific</p>
+                </div>
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">A</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+            </div>
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">B</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+            </div>
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">C</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+            </div>
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">D</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+            </div>
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">E</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+            </div>
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">F</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+            </div>
+            </div>
+            </div>
+
+        <br style="clear: left;" />
         </div>
 
         <div class="w3-btn w3-blue pagebutton" onclick="showpage(2)">Save & Next</div>
@@ -107,20 +385,28 @@
         <p> <b>Questions: </b></p>
         <div id="Q2-1">
         <div>
-            <p style="text-indent:-25px; padding-left:25px;">
-            2.1 Now, six groups of results (A, B, C, D, E and F) are generated to associate with your input. Please evaluate each group in terms of how relevant the associations are related to your input concept.<br>
-                Use a rating scale of -5 ~ 5, with -5 being <span style="color:blue">‘not at all relevant’</span> and 5 being <span style="color:blue">‘very relevant’</span>.
+            <p style="text-indent:-17px; padding-left:17px;">
+                2. Another six groups (A, B, C, D, E and F) are generated to retrieve deeper associations from your input. <br>
+                Please evaluate the associations of <b>each group</b> in terms of the relevancy, informativity and specificity, using a rating scale of -5 ~ 5:
             </p>
+            <ul style="position:relative; top:-15px;">
+                    <li>For relevancy, -5 means <span style="color:blue">‘the associations are NOT at all relevant to your input’</span>, and 5 being <span style="color:blue">‘very relevant to your input’</span>.</li>
+                    <li>For informativity,  -5 means <span style="color:blue">‘the associations are NOT informative and NOT insightful at all ’</span>, and 5 being <span style="color:blue">‘very informative and insightful’</span>.</li>
+                    <li>For specificity, -5 means <span style="color:blue">‘the generated concepts are very general and common concepts/knowledge ’</span>, and 5 being <span style="color:blue">‘very specific, detailed, and professional concepts/knowledge’</span>.</li>
+            </ul>
+
+
         </div>
             <div class="rating">
             <div style="width:1860px;">
-                <div style="float:left;position:relative;top:4px;left:10px;">
+                <div style="float:left;position:relative;top:8px;left:10px;">
                     <p style="padding-top:15px;">Relevancy</p>
                     <p style="padding-top:15px;">Informativity</p>
                     <p style="padding-top:15px;">General or specific</p>
                 </div>
                 <div class="bar">
-            A
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">A</span>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -165,7 +451,8 @@
                 </select>
             </div>
                 <div class="bar">
-            B
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">B</span>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -210,7 +497,8 @@
                 </select>
             </div>
                 <div class="bar">
-            C
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">C</span>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -255,7 +543,8 @@
                 </select>
             </div>
                 <div class="bar">
-            D
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">D</span>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -300,7 +589,8 @@
                 </select>
             </div>
                 <div class="bar">
-            E
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">E</span>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -345,7 +635,8 @@
                 </select>
             </div>
                 <div class="bar">
-            F
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">F</span>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -443,126 +734,56 @@
         <p> <b>Questions: </b></p>
         <div id="Q3-1">
         <div>
-            <p style="text-indent:-25px; padding-left:25px;">
-            3.1 Now, six groups of results (A, B, C, D, E and F) are generated to search the relation paths between your two input concepts. Please evaluate each group in terms of the relevancy and reasonability of the paths connecting your two inputs together.<br>
-                Use a rating scale of -5 ~ 5, with -5 being <span style="color:blue">‘not relevant and not reasonable at all’</span> and 5 being <span style="color:blue">‘very relevant and reasonable’</span>.
+            <p style="text-indent:-17px; padding-left:17px;">
+                3. Six groups (A, B, C, D, E and F) are generated to search the relation paths between your two input concepts. <br>
+                Please evaluate the relation paths of <b>each group</b> in terms of the relevancy, <b>novelty</b> and specificity, using a rating scale of -5 ~ 5:
             </p>
-        </div>
-            <div class="bar">
-            A
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-            <div class="bar">
-            B
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-            <div class="bar">
-            C
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-            <div class="bar">
-            D
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-            <div class="bar">
-            E
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-            <div class="bar">
-            F
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
+            <ul style="position:relative; top:-15px;">
+                    <li>For relevancy, -5 means <span style="color:blue">‘the relation paths are NOT relevant and not reasonable at all for connecting the two inputs.’</span>, and 5 being <span style="color:blue">‘very relevant and reasonable’</span>.</li>
+                    <li>For novelty,  -5 means <span style="color:blue">‘the relation paths are NOT innovative, and can NOT provoke/inspire me with any interesting ideas at all.’</span>, and 5 being <span style="color:blue">‘very innovative, and inspire me with a lot of interesting ideas’</span>.</li>
+                    <li>For specificity, -5 means <span style="color:blue">‘the bridging concepts generated between the two inputs are very general and common concepts/knowledge ’</span>, and 5 being <span style="color:blue">‘the bridging concepts are very specific, detailed, and professional concepts/knowledge’</span>.</li>
+            </ul>
 
 
-        <br style="clear: left;" />
         </div>
-        <div id="Q3-2">
-        <div>
-            <p style="text-indent:-25px; padding-left:25px;">
-                3.2 Please evaluate the bridging concepts generated between your two inputs in each group in terms of how general(common) or specific(professional) the bridging concepts are.<br>
-            Rate each group by a scale of -5 ~ 5, with -5 as <span style="color:blue">‘The bridging concepts are very general and common concepts(knowledge)’</span> and 5 as <span style="color:blue">‘The bridging concepts are very specific, detailed, and professional concepts (knowledge)’</span>.
-            </p>
-        </div>
-            <div class="bar">
-            A
+            <div class="rating">
+            <div style="width:1860px;">
+                <div style="float:left;position:relative;top:8px;left:10px;">
+                    <p style="padding-top:15px;">Relevancy</p>
+                    <p style="padding-top:15px;">Novelty</p>
+                    <p style="padding-top:15px;">General or specific</p>
+                </div>
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">A</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -578,8 +799,37 @@
                 <option value="5">5</option>
                 </select>
             </div>
-            <div class="bar">
-            B
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">B</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -595,8 +845,37 @@
                 <option value="5">5</option>
                 </select>
             </div>
-            <div class="bar">
-            C
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">C</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -612,8 +891,37 @@
                 <option value="5">5</option>
                 </select>
             </div>
-            <div class="bar">
-            D
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">D</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -629,8 +937,37 @@
                 <option value="5">5</option>
                 </select>
             </div>
-            <div class="bar">
-            E
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">E</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -646,8 +983,37 @@
                 <option value="5">5</option>
                 </select>
             </div>
-            <div class="bar">
-            F
+                <div class="bar">
+                    <span style="display:inline-block; width: 70px;"></span>
+            <span style="font-size:20px;">F</span>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
+                <select class="selectbar">
+                <option value=""></option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                </select>
                 <select class="selectbar">
                 <option value=""></option>
                 <option value="-5">-5</option>
@@ -663,120 +1029,8 @@
                 <option value="5">5</option>
                 </select>
             </div>
-
-
-        <br style="clear: left;" />
-        </div>
-        <div id="Q3-3">
-        <div>
-            <p style="text-indent:-25px; padding-left:25px;">
-            3.3 Please evaluate the searched relation paths of each group in terms of whether they have provoked/inspired you with some interesting ideas.<br>
-            Rate each group on a rating scale of -5 ~ 5, with -5 as <span style="color:blue">‘Not inspired with any ideas at all by this group’</span> and 5 as <span style="color:blue">‘Inspired with a lot of interesting ideas by this group’</span>.
-            </p>
-        </div>
-            <div class="bar">
-            A
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
             </div>
-            <div class="bar">
-            B
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
             </div>
-            <div class="bar">
-            C
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-            <div class="bar">
-            D
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-            <div class="bar">
-            E
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-            <div class="bar">
-            F
-                <select class="selectbar">
-                <option value=""></option>
-                <option value="-5">-5</option>
-                <option value="-4">-4</option>
-                <option value="-3">-3</option>
-                <option value="-2">-2</option>
-                <option value="-1">-1</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                </select>
-            </div>
-
 
         <br style="clear: left;" />
         </div>

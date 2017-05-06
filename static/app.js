@@ -205,27 +205,25 @@ function fresh_page(n){
 
 function Submit_userRating(){
     var group_alg={1:TP_explore, 2:TP_hop, 3: TP_path}
+    var j_to_criteria=['R','Info_Nol','G_S']
     // user rating
     var Q={};
     for (var i = 1; i < 4; i++) {
-        Q[i]={};
-        for (var j = 1; j < 4; j++){
-            Q[i][j]={};
-            var qid='#Q'+i+'-'+j+' select.selectbar';
-            d3.selectAll(qid).each(function(d,g){
-
-                if( d3.select(this).node().value=='' ){
-                    alert('The group ' + ItoLetter[g] + ' in question '+ i +'.'+ j +' is not rated yet, Please complete it to finish this survey.')
+        Q[i]={'R':{},'Info_Nol':{},'G_S':{}};
+        var bars=d3.select('#Q'+i+'-1').selectAll('.bar');
+        bars.each(function(d,g){
+            d3.select(this).selectAll('.selectbar').each(function(d,j){
+                var value = d3.select(this).node().value;
+                if(value==''){
+                    alert('The group ' + ItoLetter[g] + ' in page '+ i +' is not rated yet, Please complete it to finish this survey.');
                     showpage(i);
-                    $('#Q'+i+'-'+j)[0].scrollIntoView( true );
+                    $('#Q'+i+'-'+1)[0].scrollIntoView( true );
                     throw new Error('Not complete');
                 }else{
-                    //Q[i][j].push(  );
-                    Q[i][j][ group_alg[i][g] ]=parseInt(d3.select(this).node().value);
+                    Q[i][ j_to_criteria[j] ][ group_alg[i][g] ] = parseInt(value);
                 };
-
             });
-        };
+        });
     };
     // user query
     var info={'Explore':Explore_Word, 'pathstart':Pathstart, 'pathend':Pathend, 'userRating':Q};
@@ -242,16 +240,6 @@ function Submit_userRating(){
 
 
 function layout_page1(n){
-    if(n==6){
-        var textQ="six groups of results (A, B, C, D, E and F)";
-    };
-
-    if(n==7){
-        var textQ="seven groups of results (A, B, C, D, E, F and G)";
-    };
-
-    // question head
-    d3.select('#page1 div.Questions').select('#Q1-1').select('span#changheadQ').text(textQ);
 
     // layout header
     var headers = ['A','B','C','D','E','F','G','H']
@@ -263,32 +251,4 @@ function layout_page1(n){
     // adjust size
     var width = 300*n+60;
     d3.selectAll('#outerpanel table, #wrapperdiv').style('width',width+'px');
-
-    // layout rating
-    var values=['','-5','-4','-3','-2','-1','0','1','2','3','4','5']
-    d3.select('#page1 div.Questions').selectAll('div.bar,br').remove();
-    for (var i =1; i<4; i++){
-        var bars=d3.select('#page1 div.Questions').select('#Q1-'+i).selectAll('div.bar').data(headers.slice(0,n))
-                                                                         .enter()
-                                                                         .append('div')
-                                                                         .attr('class','bar')
-                                                                         .text(function(d){
-                                                                            return d;
-                                                                         });
-
-        bars.append('select').attr('class','selectbar').each(function(d){
-            d3.select(this).selectAll('option').data(values).enter().append('option').attr('value',function(d){
-                return d;
-            }).text(function(d){return d;});
-        });
-        d3.select('#page1 div.Questions').select('#Q1-'+i).append('br').style('clear','left');
-    };
-
-    $(function() {
-      $('.selectbar').barrating({
-        theme: 'bars-1to10'
-      });
-   });
-
-
 };
