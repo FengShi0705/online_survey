@@ -162,7 +162,7 @@ def get_wordnet(word): #checked OK
 
     #if len(related_words)==0:
     #    related_words=['null' for i in xrange(0,10)]
-
+    related_words = [n.replace('_',' ') for n in related_words]
     shuffle(related_words)
     return related_words[0:10]
 
